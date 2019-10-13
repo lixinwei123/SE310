@@ -4,6 +4,7 @@ public class Radio {
     private String currentRadioStation;
     private ArrayList<String> stations = new ArrayList();
     private Integer volume; //percentage, out of 100
+    private Boolean isRadioOn;
     Radio(String station){
         setRadioStation(station);
         setRadioVolume(50);
@@ -11,17 +12,6 @@ public class Radio {
         stations.add("Classical Radio FM");
         stations.add("Rock Radio FM");
         stations.add("Pop Radio FM");
-    }
-    public void setRadioStation(String s){
-        this.currentRadioStation = s;
-    }
-
-    public String getRadioStation(){
-        return this.currentRadioStation;
-    }
-
-    public void setRadioVolume(Integer vol){
-        this.volume = vol;
     }
 
     public void addRadioStation(String station){
@@ -34,5 +24,30 @@ public class Radio {
                 this.stations.remove(i);
             }
         }
+    }
+    //SETTERs
+    public void setRadioOn(){
+        this.isRadioOn = true;
+    }
+
+    public void setRadioOff(){
+        this.isRadioOn = false;
+    }
+
+    public void setRadioStation(String s){
+        this.currentRadioStation = s;
+    }
+
+    public void setRadioVolume(Integer vol){
+        this.volume = vol;
+    }
+
+    //GETTERS
+    public String getRadioStation(){
+        return this.currentRadioStation;
+    }
+
+    public Boolean isRadioOn(){
+        return this.isRadioOn;
     }
 }

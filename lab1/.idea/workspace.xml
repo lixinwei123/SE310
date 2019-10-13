@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d3aac7e-569b-442e-877d-27c7e221365a" name="Default Changelist" comment="" />
+    <list default="true" id="6d3aac7e-569b-442e-877d-27c7e221365a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/AlarmClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se310/AlarmClock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/AlarmClockRadio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se310/AlarmClockRadio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/Clock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se310/Clock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/META-INF/se310.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se310/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/MyTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se310/MyTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se310/Radio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se310/Radio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlarmClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlarmClock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlarmClockRadio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlarmClockRadio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Radio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Radio.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +31,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1Rw38v4NOZDwVrAkO007sn7qoYJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -60,5 +82,16 @@
       <updated>1570564174202</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

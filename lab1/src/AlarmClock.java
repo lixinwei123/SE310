@@ -1,19 +1,28 @@
+/*
+* T
+* */
 public class AlarmClock extends Clock {
     private MyTime alarmTime;
-    private Boolean isAlarmOn = false;
     private MyTime alarmTimeCopy; //make a copy of the original alarm so after snooze you can restore it
+    private Boolean isAlarmOn = false;
     AlarmClock(Integer currentHour, Integer currentMinute, Integer currentSecond, String currentAmPm, Integer alarmHour, Integer alarmMinute, String alarmAmPm ){
         super(currentHour,currentMinute,currentSecond, currentAmPm);
-        this.alarmTime = new MyTime(alarmHour, alarmMinute, 0);
-        this.alarmTimeCopy = new MyTime(alarmHour, alarmMinute, 0);;
+        this.alarmTime = new MyTime(alarmHour, alarmMinute, 0, alarmAmPm);
+        this.alarmTimeCopy = new MyTime(alarmHour, alarmMinute, 0, alarmAmPm);;
+    }
+    //Accepts a custom minute
+    public void snooze(Integer minute){
+        setAlarmOff();
+        setAlarm(new MyTime(this.alarmTime.getHour(),this.alarmTime.getMinute() + minute,this.alarmTime.getSecond(),this.alarmTime.getAMPM()));
+    }
+    //restore previous alarm that is store
+    public void restoreAlarmTime(){
+        setAlarm(alarmTimeCopy);
     }
 
+    /*SETTERS*/
     public void setAlarm(MyTime t){
         this.alarmTime = t;
-    }
-
-    public MyTime getAlarm(){
-        return this.alarmTime;
     }
 
     public void setAlarmOn(){
@@ -24,18 +33,12 @@ public class AlarmClock extends Clock {
         this.isAlarmOn = false;
     }
 
+    /*GETTERES*/
     public boolean isAlarmOn(){
         return this.isAlarmOn;
     }
 
-    public void snooze(Integer minute){
-        setAlarmOff();
-        setAlarm(new MyTime(this.alarmTime.getHour(),this.alarmTime.getMinute() + minute,this.alarmTime.getSecond()));
+    public MyTime getAlarm(){
+        return this.alarmTime;
     }
-
-    public void restoreAlarmTime(){
-        setAlarm(alarmTimeCopy);
-    }
-
-
 }
