@@ -10,7 +10,7 @@ public class Main {
          System.out.println ("Snooze was pressed");
          ALR.snooze(9);
          ALR.timerHelper(); //loop second time
-         System.out.println ("Buzz Buzz Buzz");
+         System.out.println ("The radio is playing " + ALR.getRadioStation());
          System.out.println ("The alarm was shut off.");
          ALR.restoreAlarmTime(); //restore original alarm state
 
