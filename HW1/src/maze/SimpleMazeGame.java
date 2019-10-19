@@ -29,17 +29,17 @@ package maze;
 
 import maze.ui.MazeViewer;
 
-import java.awt.*;
-import java.io.*;
-import java.net.URL;
-import java.util.*;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 
- * @author Sunny
- * @version 1.0
- * @since 1.0
+ * @author Kevin Li
  */
 public class SimpleMazeGame
 {
@@ -74,21 +74,22 @@ public class SimpleMazeGame
 
 	public static Maze loadMaze(final String path)
 	{
-		Map<String,Door > doors = new HashMap<String, Door>();
-		Map<Integer,String[] > roomInfoArray = new HashMap<Integer, String[]>();
+		Map<String,Door > doors = new HashMap<String, Door>(); //create a hashmap to store doors
+		Map<Integer,String[] > roomInfoArray = new HashMap<Integer, String[]>();//create a hashmap to store rooms which I later create
 		Maze maze = new Maze();
 		File file = new File(path);
 		String absolutePath = file.getAbsolutePath(); //need the absolute path since windows has \ and mac has /
 		try {
-			BufferedReader mazeReader = new BufferedReader(new FileReader(absolutePath));
-			String mazeLine = mazeReader.readLine();
-			while (mazeLine != null && mazeLine.isBlank() == false){
+			BufferedReader mazeReader = new BufferedReader(new FileReader(absolutePath)); //create a bufferreader for reading file
+			String mazeLine = mazeReader.readLine(); //read first line
+			while (mazeLine != null && mazeLine.isBlank() == false){ //loop through the whole file line by line
 				String[] lineToArray = mazeLine.split(" ");
 				if(lineToArray[0].equals("room")){
 					Integer roomNumber = Integer.parseInt(lineToArray[1]); //extract room number
 					maze.addRoom(new Room(roomNumber));
 					String[] roomInfo;
-					roomInfo = new String[4];
+					roomInfo = new String[4];  //create a new string array
+					//assign the 4 pieces of direction to this string array
 					roomInfo[0] = lineToArray[2];
 					roomInfo[1] = lineToArray[3];
 					roomInfo[2] = lineToArray[4];
@@ -97,7 +98,7 @@ public class SimpleMazeGame
 				}else{
 					Room room1 = maze.getRoom(Integer.parseInt(lineToArray[2]));
 					Room room2 = maze.getRoom(Integer.parseInt(lineToArray[3]));
-					Door door = new Door(room1,room2);
+					Door door = new Door(room1,room2); //create a door
 					doors.put(lineToArray[1],door);
 				}
 				mazeLine = mazeReader.readLine();
@@ -106,6 +107,7 @@ public class SimpleMazeGame
 			error.printStackTrace();;
 		}
 		Iterator iterator = roomInfoArray.entrySet().iterator();
+		//loop through the rooms hashmap, then set the different direction
 		while (iterator.hasNext()) {
 			Map.Entry infoPair = (Map.Entry) iterator.next();
 			Room currentRoom = maze.getRoom(Integer.parseInt(infoPair.getKey().toString()));
@@ -153,7 +155,7 @@ public class SimpleMazeGame
 	{
 //		Maze maze = createMaze();
 //	    MazeViewer viewer = new MazeViewer(maze);
-	    Maze mazeSmall = loadMaze("small.maze");
+	    Maze mazeSmall = loadMaze("large.maze");
 	    Iterator<Room> rooms = mazeSmall.iterator();
 		MazeViewer viewer = new MazeViewer(mazeSmall);
 	    viewer.run();
