@@ -41,23 +41,23 @@ import java.util.Map;
  * 
  * @author Kevin Li
  */
-public class SimpleMazeGame
+public class MazeGameCreator
 {
 	/**
 	 * Creates a small maze.
 	 */
 
-	public static Maze createMaze()
+	public Maze createMaze()
 	{
 
 		Maze maze = new Maze();
-		Room room0 = new Room(0);
+		Room room0 = makeRoom(0);
 		Wall wall = new Wall();
-		Room room1= new Room(1);
+		Room room1= makeRoom(1);
 
 		maze.addRoom(room0);
 		maze.addRoom(room1);
-		Door door = new Door(room0,room1);
+		Door door = makeDoor(room0,room1);
 		room0.setSide(Direction.North,wall);
 		room0.setSide(Direction.South,wall);
 		room0.setSide(Direction.East,door);
@@ -72,7 +72,7 @@ public class SimpleMazeGame
 
 	}
 
-	public static Maze loadMaze(final String path)
+	public  Maze loadMaze(final String path)
 	{
 		Map<String,Door > doors = new HashMap<String, Door>(); //create a hashmap to store doors
 		Map<Integer,String[] > roomInfoArray = new HashMap<Integer, String[]>();//create a hashmap to store rooms which I later create
@@ -86,7 +86,7 @@ public class SimpleMazeGame
 				String[] lineToArray = mazeLine.split(" ");
 				if(lineToArray[0].equals("room")){
 					Integer roomNumber = Integer.parseInt(lineToArray[1]); //extract room number
-					maze.addRoom(new Room(roomNumber));
+					maze.addRoom(makeRoom(roomNumber));
 					String[] roomInfo;
 					roomInfo = new String[4];  //create a new string array
 					//assign the 4 pieces of direction to this string array
@@ -98,7 +98,7 @@ public class SimpleMazeGame
 				}else{
 					Room room1 = maze.getRoom(Integer.parseInt(lineToArray[2]));
 					Room room2 = maze.getRoom(Integer.parseInt(lineToArray[3]));
-					Door door = new Door(room1,room2); //create a door
+					Door door = makeDoor(room1,room2); //create a door
 					doors.put(lineToArray[1],door);
 				}
 				mazeLine = mazeReader.readLine();
@@ -111,7 +111,7 @@ public class SimpleMazeGame
 		while (iterator.hasNext()) {
 			Map.Entry infoPair = (Map.Entry) iterator.next();
 			Room currentRoom = maze.getRoom(Integer.parseInt(infoPair.getKey().toString()));
-			Wall wall = new Wall();
+			Wall wall = makeWall();
 			String[] roomInfoValues = (String[]) infoPair.getValue();
 
 			if(roomInfoValues[0].equals("wall")){
@@ -151,15 +151,37 @@ public class SimpleMazeGame
 		return maze;
 	}
 
+	public Wall makeWall(){
+		return new Wal
+		l();
+	}
 
-	public static void main(String[] args)
+	public Door makeDoor(Room r1, Room r2){
+		return new Door(r1, r2);
+	}
+
+	public Room makeRoom(Integer num){
+		return new Room(num);
+	}
+	public static void  main(String[] args)
 	{
 //		Maze maze = createMaze();
 //	    MazeViewer viewer = new MazeViewer(maze);
-	    Maze mazeSmall = loadMaze("large.maze");
-	    Iterator<Room> rooms = mazeSmall.iterator();
-		MazeViewer viewer = new MazeViewer(mazeSmall);
-	    viewer.run();
+		Maze maze;
+		MazeGameCreator mazeCreator;
+		if(args[0].equals( "blue")){
+			mazeCreator = new BlueMazeCreator();
+		}
+		else if(args[0].equals("basic")){
+			mazeCreator = new MazeGameCreator();
+		}
+		else{
+			mazeCreator = new RedMazeCreator();
+		}
+		maze = mazeCreator.loadMaze("large.maze");
+		Iterator<Room> rooms = maze.iterator();
+		MazeViewer viewer = new MazeViewer(maze);
+		viewer.run();
 	}
 
 }

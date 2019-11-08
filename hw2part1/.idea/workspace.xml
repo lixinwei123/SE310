@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c120c32-270e-4998-bf93-3adfb4967669" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw2part1/AbstractMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw2part1/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw2part1/Menu3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw2part1/Output.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw2part1/SurveyMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw2part1/TestMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AbstractMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Emoji.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Input.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Menu1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Menu3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MultipleChoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Output.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ResponseCorrectAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Survey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SurveyMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TestMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TrueFalse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-partA/lab2-partA.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-partB/lab2-partB.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-partB/src/maze/MazeGameDriver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-partB/src/maze/makeDog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HW1/compilationOutput/production/HW1/maze/SimpleMazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../HW1/compilationOutput/production/HW1/maze/SimpleMazeGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HW1/src/maze/SimpleMazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HW1/src/maze/SimpleMazeGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1_kl958.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1_kl958.zip" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1TGUfoMzSard6tbUjqx5qRCA9PN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="hw2part1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c120c32-270e-4998-bf93-3adfb4967669" name="Default Changelist" comment="" />
+      <created>1573086031397</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573086031397</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
