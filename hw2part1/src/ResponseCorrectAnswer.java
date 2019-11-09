@@ -1,5 +1,7 @@
-import java.util.ArrayList;
+import question.Question;
 
+import java.util.ArrayList;
+/*will be implemented for part C */
 public class ResponseCorrectAnswer {
     private ArrayList<Question> responses;
     private ArrayList<Question> correctAnswers;
