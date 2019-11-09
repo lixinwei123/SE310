@@ -20,4 +20,7 @@ public abstract class Question implements Serializable {
     public abstract void loadQuestion();
 
     public abstract void display(Boolean isTest);
+
+    public void loadCorrectAnswer(String str){ }
+
 }

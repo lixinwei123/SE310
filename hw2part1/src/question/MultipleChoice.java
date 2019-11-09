@@ -17,8 +17,9 @@ public class MultipleChoice extends Question {
             numberOfChoices = this.in.getIntegerInput("Enter the number of choices for your multiple-choice question.");
             if(numberOfChoices == null){
                 continue;
-            }
-            if(numberOfChoices > 10){
+            }else if (numberOfChoices < 2){
+                this.out.display("At least two choices for a multiple choice");
+            } else if(numberOfChoices > 10){
                 this.out.display("wayyy too many choices for a multiple choice question, don't you agree?");
             }else{
                 break;
@@ -27,6 +28,7 @@ public class MultipleChoice extends Question {
         this.choices = this.in.getMultipleInput(numberOfChoices,"enter choice");
     }
 
+    @Override
     public void loadCorrectAnswer(String content){
         while(true){
             this.correctChoice = this.in.promptAndGet(content);

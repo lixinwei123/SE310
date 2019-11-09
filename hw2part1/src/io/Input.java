@@ -26,7 +26,15 @@ public class Input implements Serializable {
     public ArrayList<String> getMultipleInput(Integer num, String prompt){
         ArrayList<String> inputs = new ArrayList<>();
         for(Integer i = 1; i < num + 1; i ++){
-            inputs.add(promptAndGet(prompt +" " + i.toString()));
+            while(true){
+                String in = promptAndGet(prompt +" " + i.toString());
+                if(inputs.contains(in) == false){
+                    inputs.add(in);
+                    break;
+                }else{
+                    this.out.display("you have already entered this choice, please enter a different one");
+                }
+            }
         }
         return inputs;
     }

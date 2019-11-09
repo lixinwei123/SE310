@@ -28,7 +28,8 @@ public class Matching extends Question {
         return this.in.getMultipleInput(this.totalMatch,"match choice no");
     }
 
-    public void loadCorrectAnswer(){
+    @Override
+    public void loadCorrectAnswer(String content){
         this.out.display("enter the correct answer for each match ");
         for(var i = 0; i < column1.size(); i++){
             while(true){

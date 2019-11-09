@@ -12,8 +12,8 @@ public class Emoji extends MultipleChoice {
         this.choices.add("happy");
         this.choices.add("very happy");
     }
-
-    public void loadQustion() {
+    @Override
+    public void loadQuestion() {
         this.loadPrompt("Enter a prompt for your emoji question");
     }
 

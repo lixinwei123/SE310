@@ -58,56 +58,38 @@ public class Menu3 extends AbstractMenu {
             }
         }
     }
-
-    public void addTF(Survey survey){
-        TrueFalse responses = new TrueFalse();
+    public void addQuestion(Survey survey, Question question, String prompt){
+        Question responses = question;
         responses.loadQuestion(); //request user to input all the questions
         if(this.isTest){
-            responses.loadCorrectAnswer("Enter the correct answer. true/false");
+            responses.loadCorrectAnswer(prompt);
         }
         survey.addQuestion(responses);
         this.out.display("question added");
+    }
+
+    public void addTF(Survey survey){
+            this.addQuestion(survey,new TrueFalse(),"Enter the correct answer. true/false");
     }
 
     public void addMC(Survey survey){
-        MultipleChoice responses = new MultipleChoice();
-        responses.loadQuestion(); //request user to input all the questions
-        if(this.isTest){
-            responses.loadCorrectAnswer("Enter the correct answer");
-        }
-        survey.addQuestion(responses);
-        this.out.display("question added");
+            this.addQuestion(survey, new MultipleChoice(),"Enter the correct answer");
     }
 
     public void addShortAns(Survey survey){
-        ShortAnswer sa = new ShortAnswer();
-        sa.loadQuestion();
-        survey.addQuestion(sa);
-        this.out.display("question added");
+            this.addQuestion(survey, new ShortAnswer(),"");
     }
 
     public void addEssay(Survey survey){
-        Essay essay = new Essay();
-        essay.loadQuestion();
-        survey.addQuestion(essay);
-        this.out.display("question added");
+        this.addQuestion(survey, new Essay(),"");
     }
 
     public void addEmoji(Survey survey){
-        Emoji responses = new Emoji();
-        responses.loadQustion(); //request user to input all the questions
-        survey.addQuestion(responses);
-        this.out.display("question added");
+            this.addQuestion(survey, new Emoji(), "");
     }
 
     public void addMatch(Survey survey){
-        Matching responses = new Matching();
-        responses.loadQuestion(); //request user to input all the questions
-        if(this.isTest){
-            responses.loadCorrectAnswer();
-        }
-        survey.addQuestion(responses);
-        this.out.display("question added");
+            this.addQuestion(survey, new Matching(), "");
     }
 
 
