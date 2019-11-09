@@ -6,7 +6,7 @@ public class Essay extends Question {
     }
 
     @Override
-    public void display() {
-
+    public void display(Boolean isTest) {
+        this.out.display(this.prompt);
     }
 }

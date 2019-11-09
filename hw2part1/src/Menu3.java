@@ -66,7 +66,7 @@ public class Menu3 extends AbstractMenu {
     public void addTF(Survey survey){
         TrueFalse responses = new TrueFalse();
         responses.loadQuestion(); //request user to input all the questions
-        if(this.isTest == true){
+        if(this.isTest){
             responses.loadCorrectAnswer("Enter the correct answer. true/false");
         }
         survey.addQuestion(responses);
@@ -76,7 +76,7 @@ public class Menu3 extends AbstractMenu {
     public void addMC(Survey survey){
         MultipleChoice responses = new MultipleChoice();
         responses.loadQuestion(); //request user to input all the questions
-        if(this.isTest == true){
+        if(this.isTest){
             responses.loadCorrectAnswer("Enter the correct answer");
         }
         survey.addQuestion(responses);
@@ -105,7 +105,7 @@ public class Menu3 extends AbstractMenu {
     public void addMatch(Survey survey){
         Matching responses = new Matching();
         responses.loadQuestion(); //request user to input all the questions
-        if(this.isTest == true){
+        if(this.isTest){
             responses.loadCorrectAnswer();
         }
         survey.addQuestion(responses);

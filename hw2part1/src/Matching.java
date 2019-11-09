@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Matching extends Question {
     private ArrayList<String> column1;
@@ -43,7 +44,18 @@ public class Matching extends Question {
     }
 
     @Override
-    public void display() {
-
+    public void display(Boolean bool) {
+        this.out.display(prompt);
+        for(Integer i = 1; i < this.totalMatch + 1; i++){
+            this.out.display(this.column1.get(i - 1) + "    " + this.column2.get(i - 1));
+        }
+        if(bool){
+            Integer index =1;
+            this.out.display("correct answers:");
+            for(Map.Entry<String,String> entry : correctAnswers.entrySet()){
+                this.out.display(index.toString() + "." + entry.getKey() + "   " + entry.getValue());
+                index += 1;
+            }
+        }
     }
 }

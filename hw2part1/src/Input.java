@@ -1,4 +1,4 @@
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,10 +32,26 @@ public class Input implements Serializable {
             try{
                 return Integer.parseInt(this.promptAndGet(prompt));
             }catch(Exception e){
-                this.out.display(e);
+                this.out.display("must be an integer");
+                return null;
             }
         }
     }
+
+    public Survey deserialize(String path){
+        try{
+            FileInputStream file = new FileInputStream(path);
+            ObjectInputStream inp = new ObjectInputStream(file);
+            Survey surv = (Survey) inp.readObject();
+            file.close();
+            inp.close();
+            return surv;
+        }catch(IOException | ClassNotFoundException e){
+            this.out.display(e);
+            return null;
+        }
+    }
+
 
     public void checkOutOfBoundException(){
 

@@ -20,5 +20,11 @@ public class Survey implements Serializable {
         this.questions.add(question);
     }
 
+    public Integer getQuestionSize(){
+        return this.questions.size();
+    }
 
+    public ArrayList<Question> getQuestions(){
+        return this.questions;
+    }
 }

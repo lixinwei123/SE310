@@ -14,4 +14,9 @@ public class Emoji extends MultipleChoice {
     public void loadQustion() {
         this.loadPrompt("Enter a prompt for your emoji question");
     }
+
+    @Override
+    public void display(Boolean bool) {
+        super.display(false);
+    }
 }

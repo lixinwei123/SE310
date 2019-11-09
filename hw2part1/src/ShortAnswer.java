@@ -10,4 +10,5 @@ public class ShortAnswer extends Essay {
         this.setLimit();
     }
 
+
 }

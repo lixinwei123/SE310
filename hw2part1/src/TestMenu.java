@@ -19,23 +19,29 @@ public class TestMenu extends SurveyMenu {
 
 
     @Override
-    public void createSurvey() {
-        Menu3 menu3 = new Menu3(true);
-        this.returnedSurvey = menu3.loadMenuItems(new Test());
+    public void createSurvey(String fileType) {
+        super.createSurvey("test");
     }
 
     @Override
-    public void continueSurvey() {
-        if(this.returnedSurvey == null){
-            this.out.display("No current test is active");
-        }else{
-            Menu3 menu3 = new Menu3(false);
-            this.returnedSurvey = menu3.loadMenuItems(this.returnedSurvey);
-        }
+    public void continueSurvey(String fileType) {
+        super.continueSurvey("test");
     }
 
     @Override
     public void saveSurvey(String fileType) {
         super.saveSurvey("test");
     }
+
+    @Override
+    public Boolean isTest() {
+        return true;
+    }
+
+    @Override
+    public void displaySurvey(String fileType) {
+        super.displaySurvey("test");
+    }
+
+
 }

@@ -12,6 +12,9 @@ public class MultipleChoice extends Question {
         Integer numberOfChoices;
         while(true){
             numberOfChoices = this.in.getIntegerInput("Enter the number of choices for your multiple-choice question.");
+            if(numberOfChoices == null){
+                continue;
+            }
             if(numberOfChoices > 10){
                 this.out.display("wayyy too many choices for a multiple choice question, don't you agree?");
             }else{
@@ -33,14 +36,14 @@ public class MultipleChoice extends Question {
     }
 
     @Override
-    public void display() {
+    public void display(Boolean bool) {
         this.out.display(this.prompt);
         for(Integer i = 0; i < this.choices.size();i++){
-            this.out.displaySameLine((char)(i + 65) + "." + this.choices.get(i));
+            this.out.displaySameLine((char)(i + 65) + ")" + this.choices.get(i) + " " + "\n");
+        }
+        if(bool){
+            this.out.display("The correct choice is " + this.correctChoice);
         }
     }
 
-    public void displayCorrectA(){
-        this.out.displaySameLine("The correct choice is" + this.correctChoice);
-    }
 }
