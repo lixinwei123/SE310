@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Emoji extends MultipleChoice {
+
     Emoji(){
         this.choices = new ArrayList<>();
         this.choices.add("very upset");
@@ -9,6 +10,7 @@ public class Emoji extends MultipleChoice {
         this.choices.add("happy");
         this.choices.add("very happy");
     }
+
     public void loadQustion() {
         this.loadPrompt("Enter a prompt for your emoji question");
     }

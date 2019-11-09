@@ -1,6 +1,7 @@
+import java.io.*;
 import java.util.ArrayList;
 
-public class Survey {
+public class Survey implements Serializable {
     protected ArrayList<Question> questions;
     Survey(){
         this.questions = new ArrayList<>();
@@ -18,4 +19,6 @@ public class Survey {
     public void addQuestion(Question question){
         this.questions.add(question);
     }
+
+
 }

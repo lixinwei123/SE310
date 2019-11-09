@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu1 extends AbstractMenu {
-    SurveyMenu menu;
+    private SurveyMenu menu;
     Menu1(){
         this.menuItems = new ArrayList<>();
         this.menuItems.add("1.survey");

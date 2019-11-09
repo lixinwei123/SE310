@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Input {
-    Output out;
+public class Input implements Serializable {
+    private Output out;
     Input(){
         this.out = new Output();
     }
