@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import survey.Survey;
 import question.*;
 public class SurveyMenu extends AbstractMenu implements Serializable {
-    protected Survey returnedSurvey;
-    protected String sep;
-    protected Boolean unsavedSurvey;
+    protected Survey currentSurvey; //stores the current survey instance that user is working on
+    protected String sep; //separator for file
+    protected Boolean unsavedSurvey; //a switch to check if certain actions are required if survey is unsaved.
     protected static final long serialversionUID = 14552024; //some random uid I made
     SurveyMenu(){
         this.sep = File.separator;
@@ -58,7 +58,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     }
 
      private Boolean goBack(){
-        if(this.returnedSurvey != null){
+        if(this.currentSurvey != null){
             while(true){
                 String confirmation = this.in.promptAndGet("If you have a unsaved survey/test, your changes will be discarded if you do not save, are you sure? Enter 'Y' to confirm, anything else to cancel");
                 if(confirmation.equals("Y")){
@@ -83,7 +83,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
                 return;
             }
         }
-        this.returnedSurvey = menu3.loadMenuItems(this.returnNewSurvey());
+        this.currentSurvey = menu3.loadMenuItems(this.returnNewSurvey());
         this.unsavedSurvey = true;
         this.isSurveyNull();
     }
@@ -107,14 +107,14 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
         if(temp == null){
             return;
         }
-        if(this.returnedSurvey != null){
+        if(this.currentSurvey != null){
             String in = this.in.promptAndGet("you have an ongoing survey, are you sure you want to discard it and load in the survey from file? enter 'Y' to overwrite, or anything else to cancel");
             if(!in.equals("Y")){
                 return;
             }
         }
-        this.returnedSurvey = temp;
-        this.unsavedSurvey = true;
+        this.currentSurvey = temp;
+        this.unsavedSurvey = false;
         this.out.display("survey has been loaded in successfully, now you add more question to the survey by entering '5' command ");
     }
 
@@ -124,7 +124,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     check for ioException
     * */
     public void saveSurvey()  {
-        if(this.returnedSurvey == null){
+        if(this.currentSurvey == null){
             this.out.display("no " + this.getFileType() + " is active at the moment to save");
             return;
         }
@@ -138,23 +138,24 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
                      return;
                  }
              }
-             this.out.serialize(this.returnedSurvey,"Serializable"+ this.sep + this.getFileType() +"s" + this.sep + in + ".ser");
+             this.out.serialize(this.currentSurvey,"Serializable"+ this.sep + this.getFileType() +"s" + this.sep + in + ".ser");
              this.out.display( this.getFileType() + " has been saved");
              this.unsavedSurvey = false;
     }
 
     public void continueSurvey(){
-        if(this.returnedSurvey == null){
+        if(this.currentSurvey == null){
             this.out.display("no current " + this.getFileType() + " is active");
         }else{
             Menu3 menu3 = new Menu3(this.isTest());
-            this.returnedSurvey = menu3.loadMenuItems(this.returnedSurvey);
+            this.currentSurvey = menu3.loadMenuItems(this.currentSurvey);
             this.isSurveyNull();
         }
     }
+
     public Survey displayAllFiles(String method) {
         File[] surveyFiles = new File("Serializable" + this.sep + this.getFileType() + "s").listFiles();
-        if (surveyFiles.length < 1 && this.returnedSurvey == null) {
+        if (surveyFiles.length < 1 && this.currentSurvey == null) {
             this.out.display("No " + this.getFileType() + "s are stored");
             return null;
         }
@@ -169,13 +170,13 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
 
         while (true) {
             Integer in = this.in.getIntegerInput("please pick from the list of surveys and enter their numerical index");
-            if(in == null) return null;
+            if(in == null) continue;
             if(in.equals(indexForCurrent) && method.equals("display")){
-                if(this.returnedSurvey == null){
+                if(this.currentSurvey == null){
                     this.out.display("No survey is loaded in or active at the current time");
                     return null;
                 }else{
-                    return this.returnedSurvey;
+                    return this.currentSurvey;
                 }
             }
             if (in != null && in > 0 && in <= surveyFiles.length) {
@@ -186,9 +187,11 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
 
     //if user created a new survey instance but has no questions added, then just set it to null
     public void isSurveyNull(){
-        if(this.returnedSurvey.getQuestionSize() == 0){
-            this.returnedSurvey = null;
+        if(this.currentSurvey.getQuestionSize() == 0){
+            this.currentSurvey = null;
             this.unsavedSurvey = false;
+        }else{
+            this.unsavedSurvey = true;
         }
     }
 

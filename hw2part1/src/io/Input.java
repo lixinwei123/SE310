@@ -13,6 +13,7 @@ public class Input implements Serializable {
         this.out = new Output();
     }
 
+    /*prompt the user first before getting*/
     public String promptAndGet(String prompt){
         if(prompt.isBlank() == false){
             this.out.display(prompt);
@@ -20,6 +21,7 @@ public class Input implements Serializable {
         return this.getInput();
     }
 
+    /*prompt the user for multiple inputs*/
     public ArrayList<String> getMultipleInput(Integer num, String prompt){
         ArrayList<String> inputs = new ArrayList<>();
         for(Integer i = 1; i < num + 1; i ++){
@@ -35,7 +37,7 @@ public class Input implements Serializable {
         }
         return inputs;
     }
-
+    /*prompt the user for a integer input*/
     public Integer getIntegerInput(String prompt){
         while(true){
             try{
@@ -52,6 +54,7 @@ public class Input implements Serializable {
         }
     }
 
+    /*deserialize given a path*/
     public Survey deserialize(String path){
         try{
             FileInputStream file = new FileInputStream(path);
@@ -65,6 +68,8 @@ public class Input implements Serializable {
             return null;
         }
     }
+
+    /*only get an input*/
     public String getInput(){
         while(true){
             try{

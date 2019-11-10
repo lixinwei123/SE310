@@ -2,7 +2,7 @@ package menu;
 import io.Input;
 import io.Output;
 import java.util.ArrayList;
-
+/*an abstract class is used to reduce redundant code such as displayMenuItems*/
 public abstract class AbstractMenu {
     protected ArrayList<String> menuItems;
     protected Input in;
@@ -16,5 +16,7 @@ public abstract class AbstractMenu {
         Output output = new Output();
         output.displayStringList(this.menuItems);
     }
+
+
 
 }

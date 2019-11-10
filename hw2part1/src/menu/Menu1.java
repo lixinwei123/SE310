@@ -12,6 +12,7 @@ public class Menu1 extends AbstractMenu {
         this.loadMenuItems();
     }
 
+    //Load menu items, acts as a while loop interface
 public void loadMenuItems(){
         this.out.display("Welcome to SE310 Survey/Test Program, created by Kevin Li ©");
     while(true){

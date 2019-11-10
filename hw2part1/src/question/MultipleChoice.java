@@ -70,7 +70,7 @@ public class MultipleChoice extends Question {
             this.out.displaySameLine((char)(i + 65) + ")" + this.choices.get(i) + " " + "\n");
         }
         if(bool){
-            this.out.display("The correct choice(s) are ");
+            this.out.display("The correct choice is ");
             for(int i = 0; i < this.correctChoices.size(); i++){
                 this.out.displaySameLine((char)(i + 65) + ")" + this.correctChoices.get(i) + " " + "\n");
             }

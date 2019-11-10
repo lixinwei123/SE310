@@ -20,7 +20,7 @@ public class Menu3 extends AbstractMenu {
             this.menuItems.add("8.quit");
         }
 
-
+    //Load menu items, acts as a while loop interface
     public Survey loadMenuItems(Survey survey)  {
         while(true){
             this.displayMenuItems();
@@ -58,6 +58,8 @@ public class Menu3 extends AbstractMenu {
             }
         }
     }
+
+    /*a single function to for add question reduces redundancy of code*/
     public void addQuestion(Survey survey, Question question, String prompt){
         Question responses = question;
         responses.loadQuestion(); //request user to input all the questions

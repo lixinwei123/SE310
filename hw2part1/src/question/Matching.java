@@ -42,8 +42,8 @@ public class Matching extends Question {
     @Override
     public void loadCorrectAnswer(String content){
         this.out.display("enter the correct answer for each match by typing in the index number");
+        ArrayList<String> temp =  (ArrayList<String>)this.column2.clone();
         for (String s : column1) {
-            ArrayList<String> temp =  (ArrayList<String>)this.column2.clone();
             while (true) {
                 for (int j = 1; j < temp.size() + 1; j++) {
                     this.out.displaySameLine(j + ")" + temp.get(j - 1) + " ");

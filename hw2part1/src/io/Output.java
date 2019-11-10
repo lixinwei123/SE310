@@ -22,6 +22,7 @@ public class Output implements Serializable {
 //        }
     };
 
+    //display on same line
     public void displaySameLine(Object c){
         System.out.print(c);
 //        if(c instanceof String){
@@ -29,6 +30,7 @@ public class Output implements Serializable {
 //        }
     };
 
+    //serialize an object
     public void serialize(Object object, String path){
         try{
             FileOutputStream file = new FileOutputStream(path);
