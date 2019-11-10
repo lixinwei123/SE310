@@ -1,13 +1,15 @@
 package question;
 
-import java.io.Serializable;
+
 import io.Output;
 import io.Input;
+import rca.ResponseCorrectAnswer;
 
-public abstract class Question implements Serializable {
+public abstract class Question  {
     protected String prompt;
     protected Input in;
     protected Output out;
+    protected ResponseCorrectAnswer rca;
     public Question(){
         this.in = new Input();
         this.out = new Output();

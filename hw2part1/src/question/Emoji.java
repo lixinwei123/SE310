@@ -21,4 +21,8 @@ public class Emoji extends MultipleChoice {
     public void display(Boolean bool) {
         super.display(false);
     }
+
+    @Override
+    public void loadCorrectAnswer(String content) {
+    }
 }

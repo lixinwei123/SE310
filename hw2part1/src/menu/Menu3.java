@@ -69,15 +69,15 @@ public class Menu3 extends AbstractMenu {
     }
 
     public void addTF(Survey survey){
-            this.addQuestion(survey,new TrueFalse(),"Enter the correct answer. true/false");
+            this.addQuestion(survey,new TrueFalse(),"Enter the correct answer. T/F");
     }
 
     public void addMC(Survey survey){
-            this.addQuestion(survey, new MultipleChoice(),"Enter the correct answer");
+            this.addQuestion(survey, new MultipleChoice(),"Select the correct answer(s)");
     }
 
     public void addShortAns(Survey survey){
-            this.addQuestion(survey, new ShortAnswer(),"");
+            this.addQuestion(survey, new ShortAnswer(),"Enter the correct answer");
     }
 
     public void addEssay(Survey survey){

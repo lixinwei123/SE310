@@ -8,24 +8,21 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     protected Survey returnedSurvey;
     protected String sep;
     protected Boolean unsavedSurvey;
+    protected static final long serialversionUID = 14552024; //some random uid I made
     SurveyMenu(){
         this.sep = File.separator;
         this.unsavedSurvey = false;
         this.menuItems = new ArrayList<>();
-        this.menuItems.add("1.Create a new survey.");
+        this.menuItems.add("1.Create a new survey");
         this.menuItems.add("2.Display a survey");
         this.menuItems.add("3.Load a survey");
         this.menuItems.add("4.Save current survey");
+        this.menuItems.add("5.Continue current survey");
         this.menuItems.add("6.Back");
         this.menuItems.add("7.Quit");
     }
     public void loadMenuItems(){
         while(true){
-            if(this.returnedSurvey != null){
-                if(this.menuItems.get(4).equals("5.Continue current survey") == false){
-                    this.menuItems.add(4,"5.Continue current survey");
-                }
-            }
             this.displayMenuItems();
             String userChoice = this.in.promptAndGet("");
             switch (userChoice){
@@ -107,6 +104,9 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
 
     public void loadSurvey(){
         Survey temp = this.displayAllFiles( "load");
+        if(temp == null){
+            return;
+        }
         if(this.returnedSurvey != null){
             String in = this.in.promptAndGet("you have an ongoing survey, are you sure you want to discard it and load in the survey from file? enter 'Y' to overwrite, or any other to cancel");
             if(!in.equals("Y")){
@@ -154,7 +154,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     }
     public Survey displayAllFiles(String method) {
         File[] surveyFiles = new File("Serializable" + this.sep + this.getFileType() + "s").listFiles();
-        if (surveyFiles.length < 1) {
+        if (surveyFiles.length < 1 && this.returnedSurvey == null) {
             this.out.display("No " + this.getFileType() + "s are stored");
             return null;
         }
@@ -170,7 +170,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
         while (true) {
             Integer in = this.in.getIntegerInput("please pick from the list of surveys and enter their numerical index");
             if(in == null) return null;
-            if(in.equals(indexForCurrent)){
+            if(in.equals(indexForCurrent) && method.equals("display")){
                 if(this.returnedSurvey == null){
                     this.out.display("No survey is loaded in or active at the current time");
                     return null;

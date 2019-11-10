@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Output implements Serializable {
 
-
+    protected static final long serialversionUID = 14552024;
     public void displayStringList(ArrayList<String> items){
         for(int i = 0; i< items.size(); i++){
             this.display(items.get(i));
