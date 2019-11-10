@@ -60,7 +60,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
      private Boolean goBack(){
         if(this.returnedSurvey != null){
             while(true){
-                String confirmation = this.in.promptAndGet("If you have a unsaved survey/test, your changes will be discarded if you do not save, are you sure? Enter 'Y' to confirm, else to cancel");
+                String confirmation = this.in.promptAndGet("If you have a unsaved survey/test, your changes will be discarded if you do not save, are you sure? Enter 'Y' to confirm, anything else to cancel");
                 if(confirmation.equals("Y")){
                     return true;
                 }else{
@@ -74,7 +74,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
      void createSurvey() {
         Menu3 menu3 = new Menu3(this.isTest());
         if (this.unsavedSurvey == true) {
-            String in = this.in.promptAndGet("it seems you have an unsaved " + this.getFileType() + ", enter 5 to continue, 1 to start a new survey, else to cancel");
+            String in = this.in.promptAndGet("it seems you have an unsaved " + this.getFileType() + ", enter 5 to continue, 1 to start a new survey, anything else to cancel");
             if(!in.equals("5") && !in.equals("1")){
                 return;
             }
@@ -108,7 +108,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
             return;
         }
         if(this.returnedSurvey != null){
-            String in = this.in.promptAndGet("you have an ongoing survey, are you sure you want to discard it and load in the survey from file? enter 'Y' to overwrite, or any other to cancel");
+            String in = this.in.promptAndGet("you have an ongoing survey, are you sure you want to discard it and load in the survey from file? enter 'Y' to overwrite, or anything else to cancel");
             if(!in.equals("Y")){
                 return;
             }
@@ -132,7 +132,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
              File path = new File("Serializable" + this.sep + this.getFileType() + "s" + this.sep + in + ".ser");
 //             File absPath = new File(path.getAbsolutePath());
              if(path.exists()){
-                 String confirm = this.in.promptAndGet("a file with the name '"+in+"' already exists, are you sure you want to overwrite it? Enter 'Y' to overwrite, else to stop");
+                 String confirm = this.in.promptAndGet("a file with the name '"+in+"' already exists, are you sure you want to overwrite it? Enter 'Y' to overwrite, anything else to stop");
                  if(!confirm.equals("Y")){
                      this.out.display("save is canceled");
                      return;

@@ -3,28 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8c120c32-270e-4998-bf93-3adfb4967669" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/surveys/this is cool.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/tests/test.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/io/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/io/Input.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/io/Output.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/io/Output.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/Menu3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/Menu3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/SurveyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/SurveyMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Emoji.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Emoji.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Matching.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Matching.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/MultipleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/MultipleChoice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/ShortAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/ShortAnswer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/TrueFalse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/TrueFalse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResponseCorrectAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rca/ResponseCorrectAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Output.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/Menu3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/Menu3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/SurveyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/SurveyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/Emoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Emoji.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/Matching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Matching.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/MultipleChoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/ShortAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/ShortAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/TrueFalse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/TrueFalse.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

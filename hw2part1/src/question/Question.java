@@ -5,11 +5,14 @@ import io.Output;
 import io.Input;
 import rca.ResponseCorrectAnswer;
 
-public abstract class Question  {
+import java.io.Serializable;
+
+public abstract class Question implements Serializable {
     protected String prompt;
     protected Input in;
     protected Output out;
     protected ResponseCorrectAnswer rca;
+    protected static final long serialversionUID = 14552024; //some random uid I made
     public Question(){
         this.in = new Input();
         this.out = new Output();

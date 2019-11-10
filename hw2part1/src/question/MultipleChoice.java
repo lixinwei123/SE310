@@ -43,9 +43,8 @@ public class MultipleChoice extends Question {
                 break;
             }
         }
-
+        ArrayList<String>temp =  (ArrayList<String>)this.choices.clone();
         while(this.correctChoices.size() < this.numOfCorrectAns){
-            ArrayList<String>temp =  (ArrayList<String>)this.choices.clone();
             for (int j = 1; j < temp.size() + 1; j++) {
                 this.out.displaySameLine(j + ")" + temp.get(j - 1) + " ");
             }

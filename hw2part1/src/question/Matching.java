@@ -76,7 +76,7 @@ public class Matching extends Question {
             int index =1;
             this.out.display("correct answers:");
             for(Map.Entry<String,String> entry : correctAnswers.entrySet()){
-                this.out.display(Integer.toString(index) + "." + entry.getKey() + " ---> " + entry.getValue());
+                this.out.display(Integer.toString(index) + ")" + entry.getKey() + " ---> " + entry.getValue());
                 index += 1;
             }
         }

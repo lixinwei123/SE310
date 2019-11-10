@@ -53,9 +53,15 @@ public class ShortAnswer extends Essay {
             index += 1;
         }
     }
-
+    @Override
     public void display(Boolean isTest) {
         this.out.display("Short answer prompt:" + this.prompt);
+        if(isTest && this.numOfCorrectAns > 0){
+            this.out.display("correct answers:");
+            for(int i = 1; i < this.numOfCorrectAns + 1; i ++){
+                this.out.display(i + ")" + this.correctChoices.get(i - 1));
+            }
+        }
     } 
 
 }
