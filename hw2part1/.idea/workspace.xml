@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="hw2part1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8c120c32-270e-4998-bf93-3adfb4967669" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2part1 2/hw2part1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/hw2part1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/surveys/sampleServ.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/tests/exTest.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/tests/exTest.ser.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/io/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/io/Input.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/io/Output.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/io/Output.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/Menu1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/Menu1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/Menu3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/Menu3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/SurveyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/SurveyMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/TestMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/TestMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Essay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Essay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Matching.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Matching.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/MultipleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/MultipleChoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/survey/Survey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/survey/Survey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Output.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/AbstractMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/AbstractMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/Menu1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/Menu1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/Menu3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/Menu3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/SurveyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/SurveyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/TestMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/TestMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/question/Essay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Essay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/Matching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Matching.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/MultipleChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/TrueFalse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/TrueFalse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/survey/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/survey/Survey.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,10 +50,10 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -100,5 +106,56 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="knownFile0" value="file://$PROJECT_DIR$/../hw2partBuml.suml" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
   </component>
 </project>

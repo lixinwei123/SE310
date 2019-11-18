@@ -8,6 +8,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     protected Survey currentSurvey; //stores the current survey instance that user is working on
     protected String sep; //separator for file
     protected Boolean unsavedSurvey; //a switch to check if certain actions are required if survey is unsaved.
+    protected String selectedPath; //for modify survey
     protected static final long serialversionUID = 14552024; //some random uid I made
     SurveyMenu(){
         this.sep = File.separator;
@@ -18,8 +19,11 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
         this.menuItems.add("3.Load a survey");
         this.menuItems.add("4.Save current survey");
         this.menuItems.add("5.Continue current survey");
-        this.menuItems.add("6.Back");
-        this.menuItems.add("7.Quit");
+        this.menuItems.add("6.Modify a survey");
+        this.menuItems.add("7.Take a survey");
+        this.menuItems.add("8.Tabulate a survey");
+        this.menuItems.add("9.Back");
+        this.menuItems.add("10.Quit");
     }
     public void loadMenuItems(){
         while(true){
@@ -36,19 +40,46 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
                     this.loadSurvey();
                     break;
                 case "4":
-                    this.saveSurvey();
+                    this.saveSurvey(this.currentSurvey);
                     break;
                 case "5":
                     this.continueSurvey();
                     break;
                 case "6":
-                    //NEED TO FIX
-                    if(this.goBack()){
-                        return;
-                    }else{
+                    this.modifySurvey();
+                    break;
+                case "7":
+                    this.takeSurvey();
+                    break;
+                case "8":
+                    this.tabulateSurvey();
+                    break;
+                case "9":
+                    if(this.isTest()){
+                        this.gradeTest();
+                    }
+                    else{
+                        if(this.goBack()){
+                            return;
+                        }
+                    }
+                    break;
+                case "10":
+                    if(this.isTest()){
+                        if(this.goBack()){
+                            return;
+                        }
                         break;
                     }
-                case "7":
+                    else{
+                        this.out.display("Have a good day~");
+                        System.exit(0);
+                    }
+                case "11":
+                    if(!this.isTest()){
+                        this.out.display("not a valid input, try again");
+                        break;
+                    }
                     this.out.display("Have a good day~");
                     System.exit(0);
                 default:
@@ -93,14 +124,11 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
         if(returnedObj == null){
             return;
         }
-        Integer index = 1;
-        for(Question q: returnedObj.getQuestions()){
-            this.out.displaySameLine(index.toString() + ") ");
-            q.display(this.isTest());
-            this.out.display("");
-            index +=1;
-        }
+        this.displayQuestions(returnedObj);
     }
+
+
+
 
     public void loadSurvey(){
         Survey temp = this.displayAllFiles( "load");
@@ -123,7 +151,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     check to see if there already exists a survey named that
     check for ioException
     * */
-    public void saveSurvey()  {
+    public void saveSurvey(Survey survey)  {
         if(this.currentSurvey == null){
             this.out.display("no " + this.getFileType() + " is active at the moment to save");
             return;
@@ -138,7 +166,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
                      return;
                  }
              }
-             this.out.serialize(this.currentSurvey,"Serializable"+ this.sep + this.getFileType() +"s" + this.sep + in + ".ser");
+             this.out.serialize(survey,"Serializable"+ this.sep + this.getFileType() +"s" + this.sep + in + ".ser");
              this.out.display( this.getFileType() + " has been saved");
              this.unsavedSurvey = false;
     }
@@ -180,8 +208,19 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
                 }
             }
             if (in != null && in > 0 && in <= surveyFiles.length) {
-                return this.in.deserialize(surveyFiles[in - 1].getPath());
+                this.selectedPath = surveyFiles[in - 1].getPath();
+                return this.in.deserialize(this.selectedPath);
             }
+        }
+    }
+
+    public void displayQuestions(Survey survey){
+        Integer index = 1;
+        for(Question q: survey.getQuestions()){
+            this.out.displaySameLine(index.toString() + ") ");
+            q.display(this.isTest());
+            this.out.display("");
+            index +=1;
         }
     }
 
@@ -208,8 +247,32 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     }
 
     //for part 3
-    public void ModifySurvey(){
+    public void modifySurvey(){
+        Survey survey = this.displayAllFiles("modify");
+        while(true){
+            this.displayQuestions(survey);
+            this.out.display("Please enter the index of the question that you want to modify, enter 'back' to go back, 'save' to save all the changes made");
+            String in = this.in.getInput();
+            if(in.equals("back")){
+                return;
+            }else if(in.equals("save")){
+                this.out.serialize(survey,this.selectedPath);
+                this.out.display("survey has been saved successfully");
+                return;
+            }
+            try{
+                Integer in2 = Integer.parseInt(in);
+                try{
+                    survey.getQuestion(in2).modifyQuestion(this.isTest());
+                }catch(IndexOutOfBoundsException e){
+                    this.out.display("Please enter from the options above");
+                    continue;
+                }
+            }catch (NumberFormatException e){
+                this.out.display("Please enter from the options above");
+            }
 
+        }
     }
 
     public void takeSurvey(){
@@ -221,7 +284,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     }
 
     public void gradeTest(){
-
+        return;
     }
 
 }

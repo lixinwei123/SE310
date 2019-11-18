@@ -49,7 +49,7 @@ public class Input implements Serializable {
                 return in;
             }catch(Exception e){
                 this.out.display("must be an integer");
-                return null;
+                continue;
             }
         }
     }
@@ -85,4 +85,21 @@ public class Input implements Serializable {
             }
         }
     }
+
+    public Integer getIntInput(){
+        while(true){
+            try{
+                Integer in = Integer.parseInt(this.getInput());
+                if(in < 0) {
+                    this.out.display("must be greater than 0");
+                    return null;
+                }
+                return in;
+            }catch(Exception e){
+                this.out.display("must be an integer");
+                return null;
+            }
+        }
+    }
+
 }

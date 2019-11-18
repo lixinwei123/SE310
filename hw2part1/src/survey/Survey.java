@@ -31,4 +31,8 @@ public class Survey implements Serializable {
     public ArrayList<Question> getQuestions(){
         return this.questions;
     }
+
+    public Question getQuestion(Integer index){
+        return this.questions.get(index - 1);
+    }
 }

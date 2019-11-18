@@ -4,6 +4,7 @@ Where the sample test files are located:
    1.The sample test files are located under the "Serializable" folder, surveys and tests are stored in
    separate folders.
    2.I decided to use extension type .ser, stands for serializable.
+   3.As indicated, I used serialization to save and load the file.
 ----------------------------------------------------------------------------------------------------------------------
 Description of the program:
 This program allows you to create a survey or test of different question types. Where later on, you can display the
@@ -58,7 +59,7 @@ How the program works, from a developer's perspective:
     back for the menus, the function that continues the menu loop will return. For Menu 3 that adds different types of
     questions, when user press back, a survey or test object instance is returned. Then, currentSurvey is set to this
     instance.
-    b).serialization is used properly in In and Out classes.
+    b).serialization is used properly in In and Out classes. I
 
 
 

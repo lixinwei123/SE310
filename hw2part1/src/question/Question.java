@@ -28,4 +28,5 @@ public abstract class Question implements Serializable {
 
     public void loadCorrectAnswer(String str){ }
 
+    public abstract void modifyQuestion(Boolean isTest);
 }

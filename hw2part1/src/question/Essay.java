@@ -11,4 +11,9 @@ public class Essay extends Question {
     public void display(Boolean isTest) {
         this.out.display("Essay prompt:" + this.prompt);
     }
+
+    @Override
+    public void modifyQuestion(Boolean isTest) {
+
+    }
 }
