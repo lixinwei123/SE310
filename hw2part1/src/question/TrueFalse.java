@@ -28,4 +28,51 @@ public class TrueFalse extends MultipleChoice{
        }
     }
 
+    @Override
+    public void modifyQuestion(Boolean isTest) {
+        while(true){
+            if(isTest){
+                String in = this.in.promptAndGet("1).Modify prompt 2).Modify correct answer 3).back");
+                switch(in){
+                    case "1":
+                        this.loadPrompt("Enter a new prompt");
+                        break;
+                    case "2":
+                        while(true){
+                            String in2 = this.in.promptAndGet("Enter new answer: T/F");
+                            if(in2.equals("T") || in2.equals("F")){
+                                this.correctChoices.set(0,in2);
+                                break;
+                            }else{
+                                this.out.display("The choice you have entered is not valid");
+                                continue;
+                            }
+                        }
+                        break;
+                    case "3":
+                        return;
+                    default:
+                        this.out.display("not a valid choice, try again");
+                }
+            }else{
+                String in = this.in.promptAndGet("1).Modify prompt 2).Back");
+                if(in.equals("1")){
+                    this.loadPrompt("Enter a new prompt");
+                }else if(in.equals("2")) {
+                    return;
+                }else{
+                    this.out.display("not a valid choice, try again");
+                }
+            }
+        }
+    }
+
+    @Override
+    public void modifyChoicesOnly() {
+        super.modifyChoicesOnly();
+    }
+
+    @Override
+    public void modifyCorrectAnswer() {
+    }
 }
