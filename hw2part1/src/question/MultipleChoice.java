@@ -98,9 +98,10 @@ public class MultipleChoice extends Question {
 
     public void setUpTab(){
         for (int i = 0; i < choices.size(); i++) {
-            this.out.displaySameLine((char) (i + 65) + ")" + choices.get(i) + " " + "\n");
             String letter = Character.toString((char) (i + 65));
-            this.tabList.put(letter,0);
+            if(this.tabList.get(letter) == null){
+                this.tabList.put(letter,0);
+            }
         }
     }
 
@@ -270,6 +271,7 @@ public class MultipleChoice extends Question {
 
     @Override
     public Integer promptAnswer(Boolean isTest) {
+        this.setUpTab();
         this.userChoices = new ArrayList<>();
         if(isTest){
             this.out.display("Enter all of the correct answer, there are " + this.numOfCorrectAns.toString() + " correct answers" + ". Ex: A/B/C/D ..");

@@ -8,26 +8,28 @@
   <component name="ChangeListManager">
     <list default="true" id="8c120c32-270e-4998-bf93-3adfb4967669" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/surveys/kitty.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/surveys/match1.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Serializable/tests/match3.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/menu/SurveyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/menu/SurveyMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Emoji.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Emoji.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Essay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Essay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/surveys/Oh no.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/surveys/haha.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/surveys/hiii.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/surveys/ihate.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/surveys/surveyy.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/HA.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/I am cute.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/emo.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/essay.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/lastone.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/pissed.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/short.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/test.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/testt.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/tf.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serializable/tests/wadf.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Matching.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Matching.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/MultipleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/MultipleChoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/question/ShortAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/question/ShortAnswer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw2part1/survey/Survey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw2part1/survey/Survey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/SurveyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/SurveyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/Emoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Emoji.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/Essay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Essay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/Matching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Matching.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/question/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/MultipleChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/ShortAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/ShortAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/TrueFalse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/TrueFalse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/survey/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/survey/Survey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/survey/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/survey/Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
