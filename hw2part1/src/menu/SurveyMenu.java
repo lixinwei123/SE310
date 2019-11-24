@@ -9,6 +9,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     protected String sep; //separator for file
     protected Boolean unsavedSurvey; //a switch to check if certain actions are required if survey is unsaved.
     protected String selectedPath; //for modify survey
+    protected String surveyName;
     protected static final long serialversionUID = 14552024; //some random uid I made
     SurveyMenu(){
         this.sep = File.separator;
@@ -166,6 +167,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
                      return;
                  }
              }
+             survey.setSurveyName(in);
              this.out.serialize(survey,"Serializable"+ this.sep + this.getFileType() +"s" + this.sep + in + ".ser");
              this.out.display( this.getFileType() + " has been saved");
              this.unsavedSurvey = false;
@@ -182,6 +184,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     }
 
     public Survey displayAllFiles(String method) {
+        this.selectedPath = "";
         File[] surveyFiles = new File("Serializable" + this.sep + this.getFileType() + "s").listFiles();
         if (surveyFiles.length < 1 && this.currentSurvey == null) {
             this.out.display("No " + this.getFileType() + "s are stored");
@@ -209,6 +212,7 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
             }
             if (in != null && in > 0 && in <= surveyFiles.length) {
                 this.selectedPath = surveyFiles[in - 1].getPath();
+                this.surveyName = surveyFiles[in - 1].getName();
                 return this.in.deserialize(this.selectedPath);
             }
         }
@@ -276,15 +280,26 @@ public class SurveyMenu extends AbstractMenu implements Serializable {
     }
 
     public void takeSurvey(){
-
+        Survey survey = this.displayAllFiles("take");
+        survey.incId();
+        survey.takeSurvey(this.isTest());
+        this.out.serialize(survey,"Serializable" + this.sep + this.getFileType() +"s" + this.sep + this.surveyName);
+        this.out.display(this.getFileType() +" has been taken and saved");
     }
 
     public void tabulateSurvey(){
+        Survey survey = this.displayAllFiles("tabulate");
+        for(int i = 0; i <survey.getQuestionSize(); i ++){
+            survey.getQuestion(i + 1).displayReplies();
+            this.out.display(""); //new line
+            survey.getQuestion(i + 1).displayTabulate();
+            this.out.display("---------------"); //new line
+        }
 
     }
-
     public void gradeTest(){
-        return;
+        Survey survey = this.displayAllFiles("grade");
+        survey.displayGrade();
     }
 
 }

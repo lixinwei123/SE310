@@ -1,7 +1,13 @@
 package question;
 
-public class Essay extends Question {
+import java.util.ArrayList;
 
+public class Essay extends Question {
+    ArrayList<String> responses;
+
+    public Essay(){
+        this.responses = new ArrayList<>();
+    }
     @Override
     public void loadQuestion() {
         this.loadPrompt("Enter a prompt for the essay");
@@ -23,6 +29,34 @@ public class Essay extends Question {
             }else{
                 this.out.display("not a valid choice, try again");
             }
+        }
+    }
+
+    @Override
+    public Integer promptAnswer(Boolean isTest) {
+        String in = this.in.promptAndGet("Please enter the essay text below");
+        this.responses.add(in);
+        return 0;
+    }
+
+    @Override
+    public Integer getCorrectPoint() {
+        return 0;
+    }
+
+    @Override
+    public void displayReplies() {
+        this.out.display("Replies:");
+        for(int i = 0; i <this.responses.size(); i++){
+            this.out.display(this.responses.get(i));
+        }
+    }
+
+    @Override
+    public void displayTabulate() {
+        this.out.display("Tabulation:");
+        for(int i = 0; i <this.responses.size(); i++){
+            this.out.display(this.responses.get(i) );
         }
     }
 }

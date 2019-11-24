@@ -2,15 +2,23 @@ package question;
 
 import io.Output;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MultipleChoice extends Question {
-    ArrayList<String> choices;
-    ArrayList<String> correctChoices;
-    private Integer numOfCorrectAns;
+    protected ArrayList<String> choices;
+    protected ArrayList<String> correctChoices;
+    protected ArrayList<String> userChoices;
+    protected  HashMap<String,Integer> tabList;
+    protected ArrayList<ArrayList<String>> responses;
+    Integer id = 0;
+    protected Integer numOfCorrectAns;
     protected Output out;
     public MultipleChoice(){
         this.out = new Output();
         this.correctChoices = new ArrayList<>();
+        this.responses = new ArrayList<>();
+        this.tabList = new HashMap<>();
+
     }
     public void loadQuestion(){
         this.loadPrompt("Enter a prompt for your question");
@@ -28,6 +36,7 @@ public class MultipleChoice extends Question {
             }
         }
         this.choices = this.in.getMultipleInput(numberOfChoices,"enter choice");
+        this.setUpTab();
     }
 
     @Override
@@ -84,6 +93,14 @@ public class MultipleChoice extends Question {
             for (int i = 0; i < choices.size(); i++) {
                 this.out.displaySameLine( (i + 1 + ")" + choices.get(i) + " " + "\n"));
             }
+        }
+    }
+
+    public void setUpTab(){
+        for (int i = 0; i < choices.size(); i++) {
+            this.out.displaySameLine((char) (i + 65) + ")" + choices.get(i) + " " + "\n");
+            String letter = Character.toString((char) (i + 65));
+            this.tabList.put(letter,0);
         }
     }
 
@@ -249,8 +266,62 @@ public class MultipleChoice extends Question {
                     this.out.display("not a valid input, try again");
             }
         }
-
     }
+
+    @Override
+    public Integer promptAnswer(Boolean isTest) {
+        this.userChoices = new ArrayList<>();
+        if(isTest){
+            this.out.display("Enter all of the correct answer, there are " + this.numOfCorrectAns.toString() + " correct answers" + ". Ex: A/B/C/D ..");
+        }else{
+            this.out.display("Enter all of the possible answer, type 'done' to stop " + ". Ex: A/B/C/D ..");
+        }
+        if(isTest){
+            while(this.userChoices.size() < this.numOfCorrectAns){
+                String usrInput = this.in.getInput();
+                int index = (int)usrInput.toCharArray()[0] - 65;
+                if(index> this.choices.size() - 1 || index < 0 || this.userChoices.contains(usrInput)){
+                    this.out.display("The choice you have entered is not valid or you have already entered this, try again");
+                }else{
+                    this.tabList.replace(usrInput,this.tabList.get(usrInput) + 1);
+                    this.userChoices.add(usrInput);
+                }
+            }
+        }else{
+            while(this.userChoices.size() < this.choices.size()){
+                String usrInput = this.in.getInput();
+                if(usrInput.equals("done")){
+                    if(this.userChoices.size() < 1){
+                        this.out.display("Please enter at least 1 answer!");
+                        continue;
+                    }
+                    break;
+                }
+                int index = (int)usrInput.toCharArray()[0] - 65;
+                if(index> this.choices.size() - 1 || index < 0 || this.userChoices.contains(usrInput)){
+                    this.out.display("The choice you have entered is not valid or you have already entered this, try again");
+                }else{
+                    this.tabList.replace(usrInput,this.tabList.get(usrInput) + 1);
+                    this.userChoices.add(usrInput);
+                }
+            }
+        }
+
+        this.responses.add(this.userChoices);
+        if(this.correctChoices.size() == 0){
+            return 0;
+        }
+        for(int i =0; i < this.userChoices.size(); i ++){
+            int index = (int)this.userChoices.get(i).toCharArray()[0] - 65;
+            if(!this.correctChoices.contains(this.choices.get(index))){
+                return 0;
+            }
+        }
+
+        this.id += 1;
+        return 10;
+        }
+
 
     public void addChoice(String choice){
         this.choices.add(choice);
@@ -274,5 +345,31 @@ public class MultipleChoice extends Question {
 
     public void setAnswer(Integer index, String context){
         this.correctChoices.set(index,context);
+    }
+
+    @Override
+    public Integer getCorrectPoint(){
+        return 10;
+    }
+
+    @Override
+    public void displayReplies() {
+        this.out.display("Replies:");
+        for(int i = 0; i <this.responses.size(); i++){
+            String temp = "";
+            for(int j = 0; j <this.responses.get(i).size(); j ++){
+                temp +=  this.responses.get(i).get(j) + ",";
+            }
+            this.out.display(temp.substring(0,temp.length() -1));
+        }
+    }
+
+    @Override
+    public void displayTabulate() {
+        this.out.display("Tabulation:");
+        this.out.display(this.prompt);
+        this.tabList.forEach((key,val)->{
+            this.out.display(key +": "+val);
+        });
     }
 }

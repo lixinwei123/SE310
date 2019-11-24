@@ -9,11 +9,18 @@ public class Matching extends Question {
     private ArrayList<String> column2;
     private ArrayList<String> usedMatches;
     private HashMap<String, String> correctAnswers;
+    private HashMap<String, String> userAnswers;
+    private ArrayList<HashMap<String,String>> userReplies;
+    private HashMap<HashMap<String,String>,Integer> tabList;
+
     private Integer totalMatch;
 
     public Matching() {
         this.correctAnswers = new HashMap<>();
+        this.userAnswers =new HashMap<>();
+        this.tabList = new HashMap<>();
         this.usedMatches = new ArrayList<>();
+        this.userReplies = new ArrayList<>();
     }
 
     @Override
@@ -34,6 +41,7 @@ public class Matching extends Question {
         this.column1 = this.loadColumn("first");
         this.out.display("enter choices for your second column");
         this.column2 = this.loadColumn("second");
+        this.userReplies = new ArrayList<>();
     }
 
     public ArrayList<String> loadColumn(String column) {
@@ -253,5 +261,77 @@ public class Matching extends Question {
         if(isTest){
             this.out.display("Correct answers are updated");
         }
+    }
+
+    @Override
+    public Integer promptAnswer(Boolean isTest) {
+        this.userAnswers = new HashMap<>();
+        this.usedMatches = new ArrayList<>();
+        this.out.display("enter the answer for each match by typing in the index number");
+        ArrayList<String> temp = (ArrayList<String>) this.column2.clone();
+        for (String s : column1) {
+            while (true) {
+                for (int j = 1; j < temp.size() + 1; j++) {
+                    this.out.displaySameLine(j + ")" + temp.get(j - 1) + " ");
+                }
+                Integer index = this.in.getIntegerInput("\n please select the answer for: " + s);
+                if (index == null || index > temp.size() || index < 1) {
+                    this.out.display("The index you have entered is not valid ");
+                    continue;
+                }
+                String match = temp.get(index - 1);
+                if (!column2.contains(match) || this.usedMatches.contains(match)) {
+                    this.out.display("the choice you entered is not found or you have already entered this choice, please enter again");
+                } else {
+                    temp.remove(match);
+                    this.userAnswers.put(s, match);
+                    this.usedMatches.add(match);
+                    break;
+                }
+            }
+        }
+        this.userReplies.add(this.userAnswers);
+        if(!this.tabList.containsKey(this.userAnswers)){
+            this.tabList.put(this.userAnswers,1);
+        }else{
+            this.tabList.put(this.userAnswers, this.tabList.get(this.userAnswers) + 1);
+        }
+        if(isTest){
+            if(this.userAnswers.equals(this.correctAnswers)){
+                return 10;
+            }else{
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    public Integer getCorrectPoint() {
+        return 10;
+    }
+
+    @Override
+    public void displayReplies() {
+        this.out.display("Replies:");
+        for(int i = 0; i < this.userReplies.size();i++){
+            this.userReplies.get(i).forEach((key,val)->{
+                this.out.display(key + "--->" + val);
+            });
+            this.out.display("");
+        }
+    }
+
+    @Override
+    public void displayTabulate() {
+        this.out.display("Tabulate:");
+        this.tabList.forEach((key,val)->{
+            this.out.display(val);
+            key.forEach((key2,val2)->{
+                this.out.display(key2 + "---->" + val2);
+            });
+            this.out.display("");
+        });
+
     }
 }

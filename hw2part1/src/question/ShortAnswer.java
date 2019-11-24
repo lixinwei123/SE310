@@ -1,14 +1,17 @@
 package question;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ShortAnswer extends Essay {
     private Integer limit;
     private Integer numOfCorrectAns;
     private ArrayList<String> correctChoices;
-
+    private HashMap<String,Integer> tabList;
     public ShortAnswer(){
         this.correctChoices = new ArrayList<>();
+        this.responses = new ArrayList<>();
+        this.tabList = new HashMap<>();
     }
     public void setLimit(){
         while(true){
@@ -170,4 +173,65 @@ public class ShortAnswer extends Essay {
         }
     }
 
+    @Override
+    public Integer getCorrectPoint() {
+        return 10;
+    }
+
+    @Override
+    public Integer promptAnswer(Boolean isTest) {
+        this.out.display("the limit of your answer is " + this.limit + " word");
+        String choice = "";
+        if(isTest){
+//            while(true){
+//                String in = this.in.promptAndGet("Please enter the short answer text below");
+//                    if (in.split(" ").length > this.limit){
+//                        this.out.display("Maximum amount of total words exceeded! ");
+//                        continue;
+//                    }
+//                this.responses.add(in);
+//                if(this.tabList.get(in) != null){
+//                    this.tabList.replace(in,this.tabList.get(in) + 1);
+//                }else{
+//                    this.tabList.put(in,0);
+//                }
+//                choice = in;
+//                break;
+//            }
+            choice = this.promptResult();
+            if(this.correctChoices.contains(choice)){
+                return 10;
+            }else{
+                return 0;
+            }
+        }else{
+            this.promptResult();
+            return 0;
+        }
+    }
+
+    public String promptResult(){
+        while(true){
+            String in = this.in.promptAndGet("Please enter the short answer text below");
+            if (in.split(" ").length > this.limit){
+                this.out.display("Maximum amount of total words exceeded! ");
+                continue;
+            }
+            this.responses.add(in);
+            if(this.tabList.get(in) != null){
+                this.tabList.replace(in,this.tabList.get(in) + 1);
+            }else{
+                this.tabList.put(in,1);
+            }
+            return in;
+        }
+    }
+
+    @Override
+    public void displayTabulate() {
+        this.out.display("Tabulation:");
+        this.tabList.forEach((key,val) -> {
+            this.out.display(key+ ": " +val);
+        });
+    }
 }

@@ -29,4 +29,12 @@ public abstract class Question implements Serializable {
     public void loadCorrectAnswer(String str){ }
 
     public abstract void modifyQuestion(Boolean isTest);
+
+    public abstract Integer promptAnswer(Boolean isTest);
+
+    public abstract Integer getCorrectPoint();
+
+    public abstract void displayReplies();
+
+    public abstract void displayTabulate();
 }

@@ -1,16 +1,23 @@
 package question;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class TrueFalse extends MultipleChoice{
     public TrueFalse(){
         this.choices = new ArrayList<>();
         this.choices.add("T");
         this.choices.add("F");
+        this.tabList = new HashMap<>();
+        this.tabList.put("T",0);
+        this.tabList.put("F",0);
     }
     @Override
     public void loadQuestion() {
         this.loadPrompt("Enter a prompt for your T/F question");
+        this.tabList = new HashMap<>();
+        this.tabList.put("T",0);
+        this.tabList.put("F",0);
     }
 
     @Override
@@ -74,5 +81,32 @@ public class TrueFalse extends MultipleChoice{
 
     @Override
     public void modifyCorrectAnswer() {
+    }
+
+    @Override
+    public Integer promptAnswer(Boolean isTest) {
+        this.userChoices = new ArrayList<>();
+        while(true){
+            String usrInput = this.in.promptAndGet("Please enter T/F");
+            if(usrInput.equals("T") || usrInput.equals("F")){
+                if(usrInput.equals("T")){
+                    this.tabList.replace("T",this.tabList.get("T") + 1);
+                }else{
+                    this.tabList.replace("F",this.tabList.get("F") + 1);
+                }
+                this.userChoices.add(usrInput);
+                break;
+            }else{
+                this.out.display("The choice you have entered is not valid. T/F only. try again");
+            }
+        }
+        this.responses.add(this.userChoices);
+        if(this.correctChoices.size() == 0){
+            return 0;
+        }
+        if(!this.correctChoices.get(0).equals(this.userChoices.get(0))){
+            return 0;
+        }
+        return 10;
     }
 }
