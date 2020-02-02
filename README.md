@@ -1,2 +1,2 @@
 # SE310
-All the labs and stuff. Please only reference this as how you should do problems and DO NOT copy since you will probably get caught by me(if I TA for the class) or get caught by Salvage and Medlock
+All the labs and stuff. I got A on all the assignments/lab. Feel free to reference this to figure out how to do these problems but please don't copy since you might get caught for plagirism.
